@@ -2,15 +2,14 @@
 list1 = list(map(int, input().split(' ')))
 list2 = list(map(int, input().split(' ')))
 
-values = dict()
+values = set()
 intersection_size = 0
 
 for val in list1:
-    if not val in values.keys():
-        values[val] = 1
+    values.add(val)
 
-for val in list2:
-    if val in values.keys():
+for val in values:
+    if val in list2:
         intersection_size += 1
 
 print(intersection_size)
